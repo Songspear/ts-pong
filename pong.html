@@ -1,0 +1,53 @@
+<html>
+    <head>
+        <style>
+            .Bold{font:bold 75px arial;}
+            @import url(style.css);
+            p.highlight {
+                color: red;
+            }
+            svg {
+                background-color: rgb(0,0,0);
+            }
+            
+        </style>
+        <script src="./dist/pong.js"></script>
+    </head>
+    <body>
+        <h1>Pong </h1>
+        <svg id="scoreboard" width="1200" height="100">
+            <g id="line" transform="translate(0,100)">
+            <polygon class = "line" points = "0,0 0,-2 1200,-2 1200,0" style = "fill:grey"></polygon>
+            </g>
+            <text id="score" x="525" y="75" fill="white" class="Bold" >0     :     0</text>
+        </svg>
+        <svg id="canvas" width="1200" height="600">
+            <g id="line" transform="translate(600,0)">
+                <polygon class = "line" points = "1,0 -1,0 -1,600 1,600" style = "fill:grey"></polygon>
+            </g>
+            <g id="ball" transform="translate(600,300)">
+            <polygon class = "ball" points = "-10,10 -10,-10 10,-10 10,10" style = "fill:white">
+            </polygon>
+            </g>
+            <g id = "playerPaddle" transform="translate(1150,300)">
+                <polygon class = "paddle" points = "-10,75 -10,-75 10,-75 10,75" style = "fill:white">
+                </polygon>
+            </g>
+            <g id = "aiPaddle" transform="translate(50,300)">
+                <polygon class = "paddle" points = "-10,75 -10,-75 10,-75 10,75" style = "fill:white">
+                </polygon>
+            </g>
+        </svg>
+        <div id="controls">
+            <h2>Controls:</h2>
+            <table>
+                <!-- <tr><td>Thrust</td><td>Up Arrow</td></tr> -->
+                <tr><td>&#8679;</td><td><div id="ArrowUp" class="key">Move Paddle Up</div></td></tr>
+                <tr><td>&#8681;</td><td><div id="ArrowUp" class="key">Move Paddle Down</div></td></tr>
+                <tr><td>R</td><td><div id="Space" class="key" style="width:50px">Restart</div></td></tr>
+                <!-- <tr><td>Fire</td><td>Space</td>
+                <tr><td>Restart Game</td><td>F5</td></tr> -->
+            </table>
+        
+    </body>
+</html>
